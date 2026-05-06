@@ -1,0 +1,20 @@
+@if (results().length > 0) {
+    <table>
+    <tr>
+        <th>Year</th>
+        <th>Total Investment</th>
+        <th>Interest Earned</th>
+        <th>Total Value</th>
+    </tr>
+    @for (result of results(); track result.year) {
+    <tr>
+            <td>{{ result.year }}</td>
+            <td>{{ result.totalAmountInvested | currency }}</td>
+            <td>{{ result.totalInterest | currency }}</td>
+            <td>{{ result.valueEndOfYear | currency }}</td>
+        </tr>
+    }
+</table>
+} @else {
+    <p>No investment results to display. Please enter your investment details.</p>
+}
